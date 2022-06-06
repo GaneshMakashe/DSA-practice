@@ -1,5 +1,6 @@
 package anujBhaiyyacourse;
-
+//lecture 55 and 56
+//binary tree uses recursive function
 import java.util.Scanner;
 
 public class Tree {
