@@ -18,7 +18,7 @@ public class Tree {
 		System.out.println();
 	}
 	
-	static Node createTree() {
+	 static Node createTree() {
 		
 		Node root = null;
 		System.out.println("Enter data: ");
