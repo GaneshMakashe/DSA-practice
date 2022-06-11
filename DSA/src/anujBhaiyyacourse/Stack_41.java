@@ -4,11 +4,11 @@ import java.util.Stack;
 
 public class Stack_41 {
 //last in first out
-	class Mystack{
+	class Mystack1{
 		int[] a;
 		int top;
 		int capacity;
-		public Mystack(int capacity) {
+		public Mystack1(int capacity) {
 			this.capacity=capacity;
 			top =-1;
 			a = new int[capacity];
@@ -42,43 +42,43 @@ public class Stack_41 {
 	}
 	//using linked list
 	//dynamic approach
-	class MyStack{
-		Node head;
-		int size;
-		public MyStack() {
-			head=null;
-			size=0;
-		}
-		void push(int data) {
-			Node temp = new Node(data);
-			temp.next = head;size++;
-			head = temp;
-		}
-		
-		int peek() throws Exception {
-			if(head==null) {
-				throw new Exception();
-			}
-			return head.data;
-		}
-		
-		int pop() throws Exception {
-			if(head==null) {
-				throw new Exception();
-			}
-			int res = head.data;
-			head = head.next;size--;
-			return res;
-		}
-		
-		boolean isEmpty() {
-			return head==null;
-		}
-		int size() {
-			return size;
-		}
-		
-	}
+//	class MyStack{
+//		Node head;
+//		int size;
+//		public MyStack() {
+//			head=null;
+//			size=0;
+//		}
+//		void push(int data) {
+//			Node temp = new Node(data);
+//			temp.next = head;size++;
+//			head = temp;
+//		}
+//		
+//		int peek() throws Exception {
+//			if(head==null) {
+//				throw new Exception();
+//			}
+//			return head.data;
+//		}
+//		
+//		int pop() throws Exception {
+//			if(head==null) {
+//				throw new Exception();
+//			}
+//			int res = head.data;
+//			head = head.next;size--;
+//			return res;
+//		}
+//		
+//		boolean isEmpty() {
+//			return head==null;
+//		}
+//		int size() {
+//			return size;
+//		}
+//		
+//	}
 	
 	public static void main(String[] args) {
 		Stack<Integer> s = new Stack<>();//inbuild framework no need to make sepearte class of stack
