@@ -2,7 +2,7 @@ package anujBhaiyyacourse;
 
 public class RainWaterTrapping_16 {
 
-	static int rainWater(int a[]) {
+	static int rainWater(int[] a) {
 		int n = a.length;
 		int[] left = new int[n];
 		int[] right = new int[n];

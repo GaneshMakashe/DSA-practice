@@ -2,7 +2,7 @@ package anujBhaiyyacourse;
 
 public class Kadane_Algorithm_13 {
 	 static int maxSumSubArray(int a[]) {
-		int maxSum = 0;
+		int maxSum = Integer.MIN_VALUE;
 		int curSum = 0;
 		for(int i=0;i<a.length;i++) {
 			curSum = curSum +a[i];
