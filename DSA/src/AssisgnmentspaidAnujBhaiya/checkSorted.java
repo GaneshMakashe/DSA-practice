@@ -1,4 +1,4 @@
-package paidAnujBhaiyaAssisgnments;
+package AssisgnmentspaidAnujBhaiya;
 
 public class checkSorted {
 
