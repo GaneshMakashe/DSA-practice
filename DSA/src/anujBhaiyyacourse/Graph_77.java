@@ -4,7 +4,8 @@ import java.util.ArrayList;
 
 public class Graph_77 {
 
-	
+	//detect a cycle in a undirected graph
+	//dfs time complexity  O(V+E)
 	public boolean isCycle(int v, ArrayList<ArrayList<Integer>> adj) {
 		boolean vis[] = new boolean[v];
 		
