@@ -63,9 +63,6 @@ public class June24 {
 	return res;
 	}
 	
-	
-	
-	
 	public static void main(String[] args) {
 //		int n = 12;
 //		System.out.println(isPalindrome(n));
@@ -75,7 +72,7 @@ public class June24 {
 		//System.out.println(euclidGCD(a, b));
 		//System.out.println(euclidGcdModified(a, b));
 		//System.out.println(trailingZeros(25));
-		
+		System.out.println(uniquWays(5, 5));
 	}
 
 }
