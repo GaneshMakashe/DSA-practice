@@ -19,16 +19,17 @@ public class QuickSort20 {
 		int i=l;
 		int j=h;
 		while (i<j) {
-            while (a[i] <= pivot && i<=h-1)
+            while (a[i] <= pivot && i<=h)
                 i++;
-            while (a[j] > pivot && j>=l)
+            while (a[j] > pivot )
                 j--;
             if (i<j)
                 swap(a,i,j);
         }
-		swap(a,j,l);
+		swap(a,l,j);
 		return j;
 	}
+	
 	static void quickSort(int[] a, int l,int h) {
 		
 		if(l<h) {

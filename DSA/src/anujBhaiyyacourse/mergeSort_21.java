@@ -1,4 +1,4 @@
-package anujBhaiyyacourse;
+ package anujBhaiyyacourse;
 //uses divide and conquer 
 //revise
 //time complexity always will be O(logn)
