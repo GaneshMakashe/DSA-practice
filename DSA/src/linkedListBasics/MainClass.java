@@ -1,10 +1,11 @@
 package linkedListBasics;
 
-class Node<T>{
-	T data;
-	Node<T> next;
+class Node{
+	int data;
+	Node next;
+
 	
-	public Node(T data) {
+	public Node(int data) {
 		this.data=data;
 	}
 }
@@ -20,14 +21,14 @@ public class MainClass {
 		System.out.println("End");
 	}
 	
-	static Node<Integer> insert(int data, int position, Node<Integer> head) {
-		Node<Integer> newNode = new Node<>(data);
+	static Node insert(int data, int position, Node head) {
+		Node newNode = new Node(data);
 		if(position==0) {
 			newNode.next=head;
 			head=newNode;
 			return head;
 		}
-		Node<Integer> cur=head;
+		Node cur=head;
 		for(int i=0;i<position-1;i++) {
 			cur=cur.next;
 			if(cur==null) return head;
@@ -37,13 +38,13 @@ public class MainClass {
 		return head;
 	}
 	
-	static Node<Integer> delete(int position,Node<Integer> head) {
+	static Node delete(int position,Node head) {
 		if(head==null) return null;
 		if(position==0) {
 			head=head.next;
 			return head;
 		}
-		Node<Integer> cur=head;
+		Node cur=head;
 		for(int i=0;i<position-1;i++) {
 			cur=cur.next;
 		}
@@ -51,9 +52,9 @@ public class MainClass {
 		return head;
 	}
 	
-	static int findMiddleLL(Node<Integer> head) {
-		Node<Integer> slow=head;
-		Node<Integer> fast=head;
+	static int findMiddleLL(Node head) {
+		Node slow=head;
+		Node fast=head;
 		
 		while(fast!=null && fast.next!=null) {
 			slow=slow.next;
@@ -114,8 +115,8 @@ public class MainClass {
 	
 	//detect a cycle in a linked list
 	static boolean detectACycleLL(Node head) {
-		Node<Integer> slow=head;
-		Node<Integer> fast=head;
+		Node slow=head;
+		Node fast=head;
 		
 		while(fast!=null && fast.next!=null) {
 			slow=slow.next;
@@ -150,30 +151,62 @@ public class MainClass {
 		
 	}
 	
-	
+	//merge two sorted Linked list
+	static Node mergeTwoSortedLL(Node head1, Node head2) {
+		Node head=null,tail=null;
+		Node a=head1, b=head2;
+		
+		if(a==null) return b;
+		if(b==null) return a;
+		if(a.data <= b.data) {
+			head=a;
+			tail=a;
+			a=a.next;
+		}else {
+			head=b;
+			tail=b;
+			b=b.next;
+		}
+		
+		while(a!=null && b!=null) {
+			if(a.data <= b.data) {
+				tail.next=a;
+				tail=a;
+				a=a.next;
+			}else {
+				tail.next=b;
+				tail=b;
+				b=b.next;
+			}
+		}
+		if(a==null) tail.next=b;
+		if(b==null) tail.next=a;
+		
+		return head;
+	}
 	
 	
 	
 	public static void main(String[] args) {
-	Node<Integer> n1=new Node<>(10);
-	Node<Integer> n2=new Node<>(20);
-	Node<Integer> n3=new Node<>(30);
-	Node<Integer> n4=new Node<>(40);
-	Node<Integer> n5=new Node<>(50);
-	Node<Integer> n6=new Node<>(60); 
-	Node<Integer> n7=new Node<>(70); 
-	Node<Integer> n8=new Node<>(80); 
+	Node n1=new Node(2);
+	Node n2=new Node(4);
+	Node n3=new Node(8);
+	Node n4=new Node(10);
+	Node n5=new Node(1);
+	Node n6=new Node(3); 
+	Node n7=new Node(5); 
+	Node n8=new Node(9); 
+	Integer.MAX_VALUE
 	
-	
-	Node head=n1;
+	Node head1=n1;
 	n1.next=n2;
 	n2.next=n3;
 	n3.next=n4;
-	n4.next=n5;
+	Node head2=n5;
 	n5.next=n6;
 	n6.next=n7;
 	n7.next=n8;
-	n8.next=n3;
+	
 
 	
 	//printLL(head);
@@ -185,9 +218,15 @@ public class MainClass {
 //	printLL(head);
 //	head=reversaRecursiveLL(head);
 //	head=reverseK(head, 3);
-	System.out.println(detectACycleLL(head));
-	Node firstNode=startingofCycle(head);
-	System.out.println(firstNode.data);//error is coming is it is false update with bhaiiyya code
+//	System.out.println(detectACycleLL(head));
+//	Node firstNode=startingofCycle(head);
+//	System.out.println(firstNode.data);//error is coming is it is false update with bhaiiyya code
+	Node head=mergeTwoSortedLL(head1, head2);
+	printLL(head);
+	
+	
+	
+	
 	
 	}
 
