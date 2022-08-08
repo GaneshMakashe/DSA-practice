@@ -196,7 +196,7 @@ public class MainClass {
 	Node n6=new Node(3); 
 	Node n7=new Node(5); 
 	Node n8=new Node(9); 
-	Integer.MAX_VALUE
+	
 	
 	Node head1=n1;
 	n1.next=n2;
