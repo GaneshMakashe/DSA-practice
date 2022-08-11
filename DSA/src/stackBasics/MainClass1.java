@@ -5,7 +5,7 @@ import java.util.ArrayDeque;
 public class MainClass1 {
 	
 	
-	//previous greater element
+	//previous smaller element
 	static int[] previousSmaller(int a[]) {
 		int ans[]=new int[a.length];
 		ArrayDeque<Integer> stack = new ArrayDeque<>();
