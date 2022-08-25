@@ -127,7 +127,7 @@ public class StackProblem {
 //		
 //		System.out.println(maxAreaSubMatrix(a));
 		
-		MinStack minStack =new MinStack();
+		MinStack21 minStack =new MinStack21();
 		minStack.push(10);
 		minStack.push(2);
 		System.out.println(minStack.min());
