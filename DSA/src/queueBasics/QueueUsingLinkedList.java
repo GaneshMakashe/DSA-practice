@@ -33,7 +33,7 @@ public class QueueUsingLinkedList {
 	
 	class Node{
 		int data;
-		Node next;
+		Node next,down;
 		
 		public Node(int data) {
 			this.data=data;}
