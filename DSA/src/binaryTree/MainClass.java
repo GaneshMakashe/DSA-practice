@@ -5,6 +5,8 @@ public class MainClass {
 	public static void main(String[] args) {
 		
 		BinaryTree bTree = new BinaryTree();
+		
+		Problems p=new Problems();
 	
 		Node root=bTree.createBinaryTree();
 
@@ -13,8 +15,10 @@ public class MainClass {
 		
 //		System.out.println(bTree.levelOrder(root));
 //		System.out.println(bTree.rightSideView(root));
-		System.out.println(bTree.verticalOrder(root));
-
+//		System.out.println(bTree.verticalOrder(root));
+		System.out.println(p.inOrderTraversal(root));
+		System.out.println(p.preOrderTraversal(root));
+		System.out.println(p.postorderTraversal(root));
 	}
 
 }
