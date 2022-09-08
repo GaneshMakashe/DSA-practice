@@ -100,7 +100,77 @@ public class Problems {
 		return Math.max(lh, rh)+1;
 	}
 	
+	//ancestor of node given
+	public static ArrayList<Integer> Ancestors(Node root, int target){
+		 ArrayList<Integer> ans=new ArrayList<>();
+		 isPresent(root,target,ans);
+		 return ans;
+	}
 	
+	public static boolean isPresent(Node root, int target,  ArrayList<Integer> ans) {
+		if(root==null) return false;
+		if(root.data==target||isPresent(root.left, target, ans)||isPresent(root.right, target, ans)) {
+			ans.add(root.data);
+			return true;
+		}
+		return false;
+	}
 	
+	public static boolean isPresent1(Node root, int target,  ArrayList<Node> ans) {
+		if(root==null) return false;
+		if(root.data==target||isPresent1(root.left, target, ans)||isPresent1(root.right, target, ans)) {
+			ans.add(root);
+			return true;
+		}
+		return false;
+	}
+	
+	//	Lowest ancestors of a binary tree
+	 public Node lowestCommonAncestor(Node root,Node p,Node q) {
+//		 ArrayList<Node> l1=new ArrayList<>();
+//		 ArrayList<Node> l2=new ArrayList<>();
+//		 isPresent1(root, p.data, l1);
+//		 isPresent1(root, q.data, l2);
+//		 
+//		 int i=l1.size()-1;
+//		 int j=l2.size()-1;
+//		 
+//		 while((i>=0&&j>=0)||l1.get(i).data==l2.get(j).data) {
+//			 i--;
+//			 j--;
+//		 }
+//		 if(i==l1.size()-1) return null;
+//		 return l1.get(i+1);
+		 
+		 if(root==null) return null;
+		 if(root.data==p.data||root.data==q.data) return root;
+		 
+		 Node left=lowestCommonAncestor(root.left, p, q);
+		 Node right=lowestCommonAncestor(root.right, p, q);
+		 
+		 if(right==null) return left;
+		 if(left==null) return right;
+		 
+		 return root;
+	 }
+	
+	 Node prev=null,head=null;
+	Node bToDLL(Node root) {
+		bToDLLUtil(root);
+		return head;
+	}
+	void bToDLLUtil(Node root) {
+		if(root==null) return;
+		
+		bToDLLUtil(root.left);
+		if(prev==null) {
+			head=root;
+		}else {
+		root.left=prev;
+		prev.right=root;
+		}
+		bToDLLUtil(root.right);
+		
+	}
 	
 }

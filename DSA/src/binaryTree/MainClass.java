@@ -16,9 +16,10 @@ public class MainClass {
 //		System.out.println(bTree.levelOrder(root));
 //		System.out.println(bTree.rightSideView(root));
 //		System.out.println(bTree.verticalOrder(root));
-		System.out.println(p.inOrderTraversal(root));
-		System.out.println(p.preOrderTraversal(root));
-		System.out.println(p.postorderTraversal(root));
+//		System.out.println(p.inOrderTraversal(root));
+//		System.out.println(p.preOrderTraversal(root));
+//		System.out.println(p.postorderTraversal(root));
+		System.out.println(p.Ancestors(root,3));
 	}
 
 }
