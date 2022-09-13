@@ -1,5 +1,8 @@
 package binarySearchTree;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainClass1 {
 
 	public static boolean isValidBST(Node root) {
@@ -40,7 +43,36 @@ public class MainClass1 {
 	 
 	 
 	 //find a pair with the given target sum in a BST
-	
+	 
+	 //inorder traversal without recursion and iteration
+	public List<Integer>inorderTraversal(Node root){
+		List<Integer> ans=new ArrayList<>();
+		
+		Node cur=root;
+		while(cur!=null) {
+			if(cur.left==null) {
+				ans.add(cur.data);
+				cur=cur.right;
+			}else {
+				Node temp=cur.left;
+				while(temp.right!=null && temp.right!=cur) {
+					temp=temp.right;
+				}
+				if(temp.right==cur) {
+					temp.right=null;
+					ans.add(cur.data);
+					cur=cur.right;
+				}else {
+					temp.right=cur;
+					cur=cur.left;
+				}
+			}
+		}
+		return ans;
+	}
+	 
+	 
+	 
 	public static void main(String[] args) {
 		Node root=new Node(50);
 		root.left=new Node(30);

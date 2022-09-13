@@ -57,42 +57,7 @@ public class MainClass {
 	Node parent=null;
 	//delete node in a bst
 	public Node deleteNode(Node root, int key) {
-		Node cur=root;
-		while(cur!=null) {
-			if(cur.data==key) {
-				break;
-			}else if(key>cur.data) {
-				parent=cur;
-				cur=cur.right;
-			}else {
-				parent=cur;
-				cur=cur.left;
-			}
-		}
-		if(cur==null) return root;
-	
-		if(cur.left==null) {
-			 if(cur.data<parent.data) {
-				 parent.left=cur.right;
-			 }else if(cur.data>parent.data) {
-				 parent.right=cur.right;
-			 }
-			 return root;
-		}
-		if(cur.right==null) {
-			if(cur.data<parent.data) {
-				 parent.left=cur.left;
-			 }else if(cur.data>parent.data) {
-				 parent.right=cur.left;
-			 }
-			 return root;
-		}
-		
-				
-		parent=cur;
-		int inorderSuccessor=findMinAndDelete(cur.right);
-		cur.data=inorderSuccessor; 
-		
+		 
 		return root;
 	}
 	
