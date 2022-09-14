@@ -1,17 +1,27 @@
 package demo;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
+
 
 public class Test {
 
-	public static void main(String[] args) {
-	LocalDateTime Idt=LocalDateTime.of(2020, 5,10,11,22,33);
-	var f= DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT);
-	System.out.println(Idt.format(f));
-
-
+	static void m1(StringBuffer s1) {
+		s1=s1.append("B");
+		System.out.println(s1);
 	}
+	
+	static void m2(StringBuffer s1) {
+		s1=s1.append("C");
+		System.out.println(s1);
+	}
+	
+	
+	public static void main(String[] args) throws Exception {
+		StringBuffer s1=new StringBuffer("A");
+		m1(s1);
+		m2(s1);
+		System.out.println(s1);
+		}
 
 }
+
+
