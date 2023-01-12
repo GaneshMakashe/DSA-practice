@@ -66,7 +66,7 @@ public class BinaryTree {
 		
 	}
 	
-	//height of a tree
+	//height of a tree  also -->max depth of a binary tree
 	int heightofBinaryTree(Node root) {
 		if(root==null) return 0;
 		
